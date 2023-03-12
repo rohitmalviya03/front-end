@@ -1,54 +1,16 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 /* [Master Stylesheet v-1.0.0] */
 /* :: 1.0 Import Web Fonts */
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Ubuntu:300,400,500,700");
 /* :: 2.0 Import All CSS */
-@import url(../css/bootstrap.min.css);
-@import url(../css/classy-nav.min.css);
-@import url(../css/owl.carousel.css);
-@import url(../css/animate.css);
-@import url(../css/magnific-popup.css);
-@import url(../css/jquery-ui.min.css);
-@import url(../css/nice-select.css);
-@import url(../css/font-awesome.min.css);
-/* :: 3.0 Common/Base CSS */
+/* @import url(../assets/css/bootstrap.min.css);
+@import url(./assets/css/classy-nav.min.css);
+@import url(./assets/css/owl.carousel.css);
+@import url(./assets/css/animate.css);
+@import url(./assets/css/magnific-popup.css);
+@import url(./assets/css/jquery-ui.min.css);
+@import url(./assets/css/nice-select.css);
+@import url(./assets/css/font-awesome.min.css); */
+/* :: 3.0 Commo/n/Base CSS */
 * {
   margin: 0;
   padding: 0; }
@@ -262,7 +224,7 @@ img {
 /* Essence Button */
 .essence-btn {
   display: inline-block;
-  min-width: 170px;
+  min-width: 177px;
   height: 50px;
   color: #ffffff;
   border: none;
@@ -1094,7 +1056,7 @@ img {
   position: relative;
   z-index: 1;
   background-color: #252525;
-  padding: 70px 0 60px; }
+  padding: 70px 0 50px; }
   .footer_area .single_widget_area .footer_menu ul {
     display: -webkit-box;
     display: -ms-flexbox;
