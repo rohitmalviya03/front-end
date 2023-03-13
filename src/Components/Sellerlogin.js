@@ -4,11 +4,12 @@ import imgs from '../Components/assets/img/cat/a.png'
 import React ,{ useEffect, useState  }from 'react';
 import { Link,useNavigate  } from 'react-router-dom';
 import { setUserSession } from '../Services/AuthService';
-export default function Login(props) {
+export default function Sellerlogin(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const[session ,setSession]=useState("sdfsdf");
   const [currentUser, setCurrentUser] = useState("");
   const [loading, setLoading] = useState(false);
+  const[userType,setUserType]=useState('');
  const navigate=useNavigate();
   const [error, setError] = useState(null);
 
@@ -31,7 +32,7 @@ export default function Login(props) {
   data.append('password',user.password);
  console.log("dad",data);
 
-  axios.post('http://127.0.0.1:9996/api/users/authenticate', { email: user.email, password: user.password },{
+  axios.post('http://127.0.0.1:9996/api/users/authenticateseller', { email: user.email, password: user.password },{
    
   } 
   
@@ -40,7 +41,8 @@ export default function Login(props) {
   console.log('Form data submitted successfully!',response);
   console.log('dgf',response.data.id);
   setUserSession(response.data.token, response.data.name,response.data.id);
-  navigate("/");window.location.reload(); 
+  sessionStorage.setItem('usertype', "seller");
+  navigate("/sellerdash");window.location.reload(); 
   
   
 })
@@ -61,17 +63,16 @@ export default function Login(props) {
 
   return (
    <>
-   <div class="checkout_area">
+     <div class="checkout_area">
         <div class="container">
-            <div class="row">
-
+            <div class="row"> 
    <div class="col-12 col-md-6 ">
                     <div class="checkout_details_area clearfix ml-30">
 <p></p>
 	<br/>
 <br/><br/><br/>
                         <div class="cart-page-heading  ">
-                            <h5>Customer Login Form</h5>
+                            <h5>Seller  Login Form</h5>
                         </div>
                         {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
                         <form onSubmit={handleSubmit}>
@@ -97,7 +98,6 @@ export default function Login(props) {
                     </div>
                     <br/><br/>
                                    </div>
-
                                    <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
                     <div class="order-details-confirmation">
 
@@ -108,8 +108,7 @@ export default function Login(props) {
                      <img src={imgs}></img>
                     </div>
                 </div>
-                       </div></div></div>         
-
+                       </div></div></div>     
    </>
   );
 }

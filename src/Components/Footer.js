@@ -15,9 +15,9 @@ export default function Footer() {
                       
                         <div className="footer_menu">
                             <ul>
-                                <li><a href="shop.html">Shop</a></li>
+                                {/* <li><a href="shop.html">Shop</a></li>
                                 <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="contact.html">Contact</a></li> */}
                             </ul>
                         </div>
                     </div>
@@ -25,12 +25,8 @@ export default function Footer() {
                 <div className="col-12 col-md-6">
                     <div className="single_widget_area mb-30">
                         <ul className="footer_widget_menu">
-                            <li><a href="#">Order Status</a></li>
-                            <li><a href="#">Payment Options</a></li>
-                            <li><a href="#">Shipping and Delivery</a></li>
-                            <li><a href="#">Guides</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="sLogin">Seller Login</a></li>
+                           
+                            <li><a href="sellerlogin">Seller Login</a></li>
                             
                             <li><a href="registerseller">Seller Registration</a></li>
                         </ul>

@@ -6,7 +6,8 @@ import UserCart from './Components/UserCart';
 import Footer from './Components/Footer';
 import MyOrders from './Components/MyOrders';
 import Sellerdash from './Components/Sellerdash';
-import SellerRegistration from './SellerRegistration';
+import SellerRegistration from './Components/SellerRegistration';
+import Sellerlogin from './Components/Sellerlogin';
 import {
   BrowserRouter as Router,
   Routes ,
@@ -34,6 +35,7 @@ function App(props) {
     <Route path="cart" element={<UserCart/>}/>
     <Route path="sellerdash" element={<Sellerdash/>}/>
     <Route path="registerseller" element={<SellerRegistration/>}/>
+    <Route path="sellerlogin" element={<Sellerlogin/>}/>
 <Route path="myorders" element={<MyOrders></MyOrders>}></Route>
 
      </Routes>

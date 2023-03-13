@@ -119,7 +119,7 @@ var getproduct=getProduct();
     <>
 
 <div className='container-fluid'>
-<h3>{data}</h3>
+
 <div className='row'>
 {/* {this.state.category.map((item)  =>(  
 
@@ -158,12 +158,12 @@ var getproduct=getProduct();
      </div>
     <div className='col-lg-10'>
         <div className='row'>
-    {msg}
+   
     {filteredProducts.map((item) => (
  
 <div id={item.id} className="card  mb-3" style={{width: "16rem"}}>
 
-<img src={"data:image/png;base64," + item.image} className="card-img-top" alt="..." />
+<img src={"data:image/png;base64," + item.image}   style={{ width: 200, height: 130 }} className="card-img-top" alt="..." />
 <div className="card-body">
  <h5 className="card-title">{item.name}</h5>
  <p className="card-text">{item.description}</p>
@@ -186,7 +186,7 @@ var getproduct=getProduct();
     <option value="5">5</option>
    </select>
   
-   <button className=" essence-btn" onClick={() => handleAddToCart(item.id,item.name,item.price,quantity)}>cart</button>
+   <button className="card-footer essence-btn" onClick={() => handleAddToCart(item.id,item.name,item.price,quantity)}>Add to Cart</button>
    
     </div></div>
 </div>

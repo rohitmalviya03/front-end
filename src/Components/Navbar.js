@@ -2,6 +2,7 @@ import React, { Component ,useEffect ,useState} from 'react';
 import { Link ,useNavigate} from 'react-router-dom';
 import './style.css';
 import ProductCard from './ProductCard';
+import cat1 from '../assets/img/cat/at3.webp'
 import { getUser,Cartlength } from '../Services/AuthService';
 
 export default function Navbar(props) {
@@ -26,12 +27,14 @@ function checkStorage() {
 const logout = () => {
   sessionStorage.removeItem("user");
   sessionStorage.removeItem("id");
+  sessionStorage.removeItem("usertype");
   setisLogged(false);
   alert("Logout Done Successfully");
   navigate("/");window.location.reload(); 
 };
-
-  return (
+const useretype=sessionStorage.getItem('usertype');
+console.log(useretype);  
+return (
     
     
     <header className='header_area'>
@@ -53,27 +56,26 @@ const logout = () => {
         <li class="nav-item">
           <Link class="nav-link active" aria-current="page" to="">Home</Link>
         </li>
+        {useretype!="seller" ? 
         <li class="nav-item">
-          <Link class="nav-link" to="registrationform">Registration</Link>
+        <Link class="nav-link" to="registrationform">New User : Create an Acount</Link>
+        
+      </li>:
+       
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <li class="nav-item"><li class="nav-item">
+          <Link class="nav-link" to="/sellerdash">Seller Home</Link>
         </li>
+
+         </li>
         <li class="nav-item">
           <Link class="nav-link" to="addproduct">Add Product</Link>
         </li>
      
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link class="dropdown-item" href="#">Action</Link></li>
-            <li><Link class="dropdown-item" href="#">Another action</Link></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><Link class="dropdown-item" href="#">Something else here</Link></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <Link class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</Link>
-        </li>
+        </ul>
+        
+        
+}   
        
       </ul>
      
@@ -86,9 +88,9 @@ const logout = () => {
         <li class="nav-item">
           <span className='nav-link'>Welocme {user}</span>
         </li>
-        <li class="nav-item dropdown">
+        {useretype!="seller" ?  <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Action :
           </a>
           <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
             <li><Link className="dropdown-item" to="cart">View Cart
@@ -100,7 +102,8 @@ const logout = () => {
             <li><hr className="dropdown-divider" /></li>
           </ul>
         </li>
-       
+       : <li  class="nav-item"  ><Link class="nav-link" onClick={logout}>Logout</Link></li>
+      }
         </ul>
         )}
        

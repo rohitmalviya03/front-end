@@ -6,7 +6,11 @@ export const signUp=(user)=>{
     return axios.post(BASE_URL+'/save',user)
 
 };
+export const sellersave=(seller)=>{
+    console.log("adadada",seller);
+    return axios.post(BASE_URL+'/sellerregistration',seller)
 
+};
 export const addcart=(data,userId)=>{
    
     return axios.post(BASE_URL+'/cart/'+userId+'/items/',data)

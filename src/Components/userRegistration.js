@@ -1,7 +1,7 @@
 
 import axios, {isCancel, AxiosError} from 'axios';
 import { signUp } from '../Services/userService';
-
+import imgs from '../Components/assets/img/cat/regg.png'
 import React, { useEffect, useState  } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 export default function UserRegistration() {
@@ -36,9 +36,9 @@ export default function UserRegistration() {
        
       }
     return (
-    <>
+    <>  
     <div className="checkout_area ">
-        <h3>Registratoin</h3>
+       
         <div className="container">
             <div className="row">
 
@@ -123,17 +123,26 @@ export default function UserRegistration() {
                                 </div>
                             </div>
                 <br/>
-                              <input type="submit" className="btn btn-success"  value="Submit"/>
+                              <input type="submit" className="btn essence-btn"  value="Submit"/>
                  
                         </form>
                     </div>
                 </div>
 
-                
+                <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
+                    <div class="order-details-confirmation">
+
+                      
+
+                        
+
+                     <img src={imgs}></img>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
+   
     </>
   );
 }
